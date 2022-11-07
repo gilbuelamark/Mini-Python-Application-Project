@@ -1,0 +1,34 @@
+START
+
+from tkinter import everything
+from time import everything
+
+CREATE window = Tk interface()
+
+CREATE time_label equals Label(ADD window, SET font to ("Arial", SET fonstsize to 50),SET foreground color to
+"sky blue",SET background color to "black")
+pack time_label
+
+CREATE day_label equals Label(ADD window, SET font to ("Calibri", SET fontsize to 25))
+pack day_label
+
+CREATE date_label equals label(ADD window, SET font to ("Calibri", SET fontsize to 20))
+pack date_label
+
+
+define update function
+       CREATE string variable to time_string =  SET strftime ("I%: %M: %S %p ")
+       time_label.config(set text to "time_string")
+        
+       CREATE string variable day_string = SET strftime ("%A")
+       day_label.config(set text to "day_string")
+       
+       CREATE string variable date_string = SET strftime("%B %d %Y")
+       day_label.config(set text to "date_string")
+
+       time_label.after(1000, update)
+
+END update
+END window.mainloop
+
+STOP
