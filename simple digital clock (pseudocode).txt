@@ -5,15 +5,15 @@ from time import everything
 
 CREATE window = Tk interface()
 
-CREATE time_label equals Label(ADD window, SET font to ("Arial", SET fonstsize to 50),SET foreground color to
+CREATE time_label = Label(ADD window, SET font to ("Arial", SET fonstsize to 50),SET foreground color to
 "sky blue",SET background color to "black")
-pack time_label
+time_label.pack()
 
-CREATE day_label equals Label(ADD window, SET font to ("Calibri", SET fontsize to 25))
-pack day_label
+CREATE day_label = Label(ADD window, SET font to ("Calibri", SET fontsize to 25))
+day_label.pack
 
-CREATE date_label equals label(ADD window, SET font to ("Calibri", SET fontsize to 20))
-pack date_label
+CREATE date_label = label(ADD window, SET font to ("Calibri", SET fontsize to 20))
+date_label.pack()
 
 
 define update function
@@ -26,7 +26,7 @@ define update function
        CREATE string variable date_string = SET strftime("%B %d %Y")
        day_label.config(set text to "date_string")
 
-       time_label.after(1000, update)
+       window.after(1000, update)
 
 END update
 END window.mainloop
