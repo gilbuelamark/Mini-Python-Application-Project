@@ -28,7 +28,7 @@ define update function
 
        window.after(1000, update)
 
-END update
-END window.mainloop
+    update()
+    window.mainloop()
 
 STOP
